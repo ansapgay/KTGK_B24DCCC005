@@ -26,10 +26,32 @@ const PostList = () => {
   ]);
 
   return (
-  <div className="post-list">
-      {posts.map((post) => (
-        <PostCard key={post.id} post={post} />
-      ))}
+    <div className="post-table-wrap">
+      <table className="post-table">
+        <thead>
+          <tr>
+            <th>Ảnh</th>
+            <th>Tiêu đề</th>
+            <th>Tác giả</th>
+            <th>Ngày</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          {posts.map((post) => (
+            <tr key={post.id}>
+              <td className="thumb"><img src={post.thumbnail} alt={post.title} /></td>
+              <td className="title">{post.title}</td>
+              <td className="author">{post.author}</td>
+              <td className="date">{post.date}</td>
+              <td className="actions">
+                <a href={`/posts/${post.id}`}>Xem</a>
+                <a href={`/posts/edit/${post.id}`} style={{marginLeft: '0.5rem'}}>Sửa</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
