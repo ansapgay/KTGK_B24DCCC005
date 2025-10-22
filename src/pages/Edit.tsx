@@ -1,6 +1,6 @@
 import PostForm from "../components/PostForm";
 import { useParams, useNavigate } from "react-router-dom";
-import { Post } from "../types";
+import type { Post } from "../types";
 
 const Edit = () => {
   const { id } = useParams();
@@ -15,3 +15,4 @@ const Edit = () => {
 };
 
 export default Edit;
+

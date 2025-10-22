@@ -6,6 +6,8 @@ interface Props {
   initialData?: Post;
 }
 
+import "./PostForm.css";
+
 const PostForm = ({ onSubmit, initialData }: Props) => {
   const [formData, setFormData] = useState<Post>(
     initialData || {
@@ -29,13 +31,13 @@ const PostForm = ({ onSubmit, initialData }: Props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-xl mx-auto">
-      <input name="title" value={formData.title} onChange={handleChange} placeholder="Tiêu đề" className="border p-2" />
-      <input name="author" value={formData.author} onChange={handleChange} placeholder="Tác giả" className="border p-2" />
-      <input name="thumbnail" value={formData.thumbnail} onChange={handleChange} placeholder="URL ảnh" className="border p-2" />
-      <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Mô tả ngắn" className="border p-2" />
-      <textarea name="content" value={formData.content} onChange={handleChange} placeholder="Nội dung" className="border p-2" />
-      <button type="submit" className="bg-blue-600 text-white py-2 rounded">Lưu bài viết</button>
+    <form onSubmit={handleSubmit} className="post-form">
+      <input name="title" value={formData.title} onChange={handleChange} placeholder="Tiêu đề" />
+      <input name="author" value={formData.author} onChange={handleChange} placeholder="Tác giả" />
+      <input name="thumbnail" value={formData.thumbnail} onChange={handleChange} placeholder="URL ảnh" />
+      <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Mô tả ngắn" />
+      <textarea name="content" value={formData.content} onChange={handleChange} placeholder="Nội dung" />
+      <button type="submit">Lưu bài viết</button>
     </form>
   );
 };

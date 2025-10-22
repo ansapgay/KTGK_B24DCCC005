@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import PostDetail from "../components/PostDetail";
-import { Post } from "../types";
+import type { Post } from "../types";
 
 // Dữ liệu tạm thời (thường sau này sẽ lấy từ API hoặc context)
 const samplePosts: Post[] = [

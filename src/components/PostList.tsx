@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Post } from "../types";
 import PostCard from "./PostCard";
+import "./PostList.css";
 
 const PostList = () => {
   const [posts] = useState<Post[]>([
@@ -25,7 +26,7 @@ const PostList = () => {
   ]);
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+  <div className="post-list">
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
